@@ -1,2 +1,2 @@
-React app2
+React app1
 Testing purpose
