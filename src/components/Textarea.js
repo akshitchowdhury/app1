@@ -4,11 +4,19 @@ export default function Textarea(props) {
   
   const [text, setText] = useState("Enter text")
   
-  const UpperCase= ()=>{
+  // const UpCase= ()=>{
 
-      let ntext = text.toUpperCase()
-      setText(ntext)
-        }
+  //     let ntext = text.toUpperCase()
+  //     setText(ntext)
+  //       }
+
+  const handleUpclick = function(){
+    setText("upclick fired")
+    let newText = text.toUpperCase()
+    setText(newText)
+     }
+    
+
 
   const handleChange = (event)=>{
 
@@ -26,7 +34,8 @@ export default function Textarea(props) {
   </div>
   <br>
   </br>
-  <button type="button" className="btn btn-dark mx-2" onClick={UpperCase} >Caps on</button>
+  <button type="button" className="btn btn-dark mx-2" onClick={handleUpclick} >Caps on</button>
+  
   <button type="button" className="btn btn-dark mx-2 ">Button2</button>
   </div>
   )
