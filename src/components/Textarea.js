@@ -29,7 +29,7 @@ export default function Textarea(props) {
   }
 
     return (
-        <div className='container'>
+        <div className='container' >
     <div className="mb-3">
     <label htmlFor="exampleFormControlTextarea1" className="form-label">{props.head}</label>
     <br>
@@ -39,9 +39,9 @@ export default function Textarea(props) {
   </div>
   <br>
   </br>
-  <button type="button" className="btn btn-dark mx-2" onClick={handleUpclick} >Caps on</button>
+  <button type="button" className={`btn btn-${props.mode} mx-2`} onClick={handleUpclick} >Caps on</button>
   
-  <button type="button" className="btn btn-dark mx-2 "onClick={erase}>Clear all</button>
+  <button type="button" className={`btn btn-${props.mode} mx-2`}onClick={erase}>Clear all</button>
   </div>
   )
 }

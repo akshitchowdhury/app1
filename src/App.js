@@ -11,14 +11,18 @@ let display = ()=>{
 
   if(mode==='light'){
     setmode('dark')
-    document.body.style.backgroundColor = 'black'
+    // document.body.style.backgroundColor = 'grey'
   }
 
   else{
     setmode('light')
-    document.body.style.backgroundColor = 'white'
+    // document.body.style.backgroundColor = 'white'
   } 
   }
+
+
+
+
 
   
 //  let display = ()=> 
@@ -30,12 +34,12 @@ let display = ()=>{
     <>
     
 
-<Nav head = {"MY NAV"} display={display}></Nav>
+<Nav head = {"MY NAV"} mode = {mode} display={display}></Nav>
 
 
 
 
-<Textarea head ="Text space"/>
+<Textarea head ="Text space" mode={mode} />
 </>
     
   );
