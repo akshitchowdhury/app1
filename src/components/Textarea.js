@@ -10,23 +10,28 @@ export default function Textarea(props) {
   //     setText(ntext)
   //       }
 
-  const handleUpclick = function(){
-    setText("upclick fired")
+  const handleUpclick = ()=>{
+    
     let newText = text.toUpperCase()
     setText(newText)
      }
     
 
+     const erase = ()=>{
+    
+      let newText = ""
+      setText(newText)
+       }
 
-  const handleChange = (event)=>{
+  const handleChange = function(event){
 
-    setText(event.target.text)
+    setText(event.target.value)
   }
 
     return (
         <div className='container'>
     <div className="mb-3">
-    <label for="exampleFormControlTextarea1" className="form-label">{props.head}</label>
+    <label htmlFor="exampleFormControlTextarea1" className="form-label">{props.head}</label>
     <br>
     </br>
     <br></br>
@@ -36,7 +41,7 @@ export default function Textarea(props) {
   </br>
   <button type="button" className="btn btn-dark mx-2" onClick={handleUpclick} >Caps on</button>
   
-  <button type="button" className="btn btn-dark mx-2 ">Button2</button>
+  <button type="button" className="btn btn-dark mx-2 "onClick={erase}>Clear all</button>
   </div>
   )
 }

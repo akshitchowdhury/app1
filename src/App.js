@@ -1,64 +1,43 @@
-// import logo from './logo.svg';
-// import './App.css';
-// import About from './components/About';
 
-import Alert from "./components/Alert";
-import Navbar from "./components/Navbar";
-import Textform from "./components/Textform";
+import './App.css';
+import Nav from './components/Nav';
+import Textarea from './components/Textarea';
 import React, {useState} from 'react'
-
-
 function App() {
-   
-  const[mode, setMode] = useState('light')
- 
-const [alert, setAlert] = useState(null)
 
+const [mode, setmode] = useState('light')
 
-const showAlert = (message,type)=>{
-  setAlert({
-  msg : message,
-  type : type
-})
-setTimeout(()=>{
-  setAlert(null)
-},1500)
-}
-
-const toggleMode = ()=>{
+let display = ()=>{
 
   if(mode==='light'){
-
-    setMode('dark')
-
-    document.body.style.backgroundColor = '#123150'
-    showAlert("Dark mode enabled", "success")
+    setmode('dark')
+    document.body.style.backgroundColor = 'black'
   }
+
   else{
-    setMode('light')
-    
+    setmode('light')
     document.body.style.backgroundColor = 'white'
-    showAlert("Light mode enabled", "success")
+  } 
   }
-}
 
+  
+//  let display = ()=> 
+// {document.body.style.backgroundColor = 'black'
+//  }
+ 
   return (
 
-<>
+    <>
+    
+
+<Nav head = {"MY NAV"} display={display}></Nav>
 
 
-<Navbar title = "Test-Mod" about = "Details " mode ={mode} toggleMode={toggleMode}/>  
-<Alert alert = {alert}> </Alert>
-
-<div className='container my-3' >
 
 
-<Textform name = "Enter your text below" mode={mode}/>
-
-{/* <About/> */}
-</div>
-
+<Textarea head ="Text space"/>
 </>
+    
   );
 }
 
